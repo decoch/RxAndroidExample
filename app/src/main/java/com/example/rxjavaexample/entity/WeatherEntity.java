@@ -1,5 +1,8 @@
 package com.example.rxjavaexample.entity;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 /**
@@ -8,13 +11,11 @@ import java.util.List;
 
 public class WeatherEntity {
 
-    public String base;
-    public List<Weather> weather;
+    @Expose
+    @SerializedName("pinpointLocations")
+    public List<PinpointLocations> pinpointLocations;
 
-    public class Weather {
-        public int id;
-        public String main;
-        public String description;
-        public String icon;
-    }
+    @Expose
+    @SerializedName("link")
+    public String link;
 }
